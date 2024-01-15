@@ -15,17 +15,18 @@ export default function Summary({ quiz, answers }) {
             }
         return (
             
-          <p key={index} className="my-8 font-bold">
+          <div key={index} className="my-8 font-bold">
             <p>
               Q{index + 1}
               {`) `}
               {ques.question}
             </p>
             <p className={tempclass}>
-              Selected Answer:{` `}
-              {answers[index]}
+              
+              {answers[index]!=null && `Selected Answer:  ${answers[index]}`}
+              {answers[index]==null && `Answer:  ${ques.answers[0]}`}
             </p>
-          </p>
+          </div>
         );
       })}
       <p></p>
